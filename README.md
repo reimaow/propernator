@@ -1,0 +1,1 @@
+garbage vibe coded site
