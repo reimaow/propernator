@@ -1,14 +1,156 @@
-body {
+/* Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #111;
-    color: white;
-    font-family: Arial, sans-serif;
+    padding: 0;
 }
 
-h1 {
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url("https://i.kym-cdn.com/entries/icons/original/000/056/229/gamerepsteincover.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: flex-start; /* keep container left-shifted */
+    align-items: center;
+    position: relative;
+    padding: 40px 0 40px 8%; /* add left padding to shift content */
+}
+
+/* Dark overlay */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 1;
+    width: 70%; /* narrower container to move everything left */
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left-align bubbles */
+}
+
+/* Shared bubble style */
+.bubble {
+    background: rgba(0, 0, 0, 0.75); /* slightly transparent */
+    color: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+    text-align: left; /* text left-aligned inside bubbles */
+    align-self: flex-start; /* align bubble to left of container */
+}
+
+/* Large top bubble */
+.main-bubble {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.main-bubble h1 {
+    margin-bottom: 25px;
     font-size: 3rem;
 }
+
+/* Inner bubble inside main bubble */
+.info-bubble {
+    background: rgba(20, 20, 20, 0.75);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* Info row layout */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+/* Left side labels */
+.label {
+    color: #cccccc;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Right side values */
+.value {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Bottom row layout */
+.bottom-row {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: flex-start; /* align bubbles left */
+    align-items: flex-start;
+}
+
+/* Smaller bubbles */
+.small-bubble {
+    flex: 1;
+    text-align: left;
+    padding: 35px;
+}
+
+.small-bubble h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Blue-tinted links */
+.bubble a {
+    color: #e6f0ff;
+    text-decoration: none;
+    transition: 0.2s ease;
+    font-size: 1.2rem;
+}
+
+.bubble a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Instructions list */
+.instructions {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.instructions li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Final launch note */
+.launch-note {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Highlighted text */
+.highlight {
+    background-color: rgba(0, 150, 255, 0.2);
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+/* test */
